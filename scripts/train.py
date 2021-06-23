@@ -1,5 +1,7 @@
 import tensorflow as tf
 from tensorflow import keras
+from keras.callbacks import EarlyStopping
+from matplotlib import pyplot
 import numpy as np
 import json
 import sys
@@ -86,11 +88,13 @@ if __name__ == "__main__":
         save_weights_only=True,
     )
 
+    es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=10)
+
     history = model.fit(
         train,
         validation_data=valid,
         epochs=100,
-        callbacks=[checkpoint],
+        callbacks=[checkpoint, es],
     )
 
     model.load_weights("best_model")
@@ -101,4 +105,7 @@ if __name__ == "__main__":
     test_loss, test_acc = model.evaluate(test)
     print(f"test loss {test_loss}, test acc {test_acc}")
 
-   
+    pyplot.plot(history.history['loss'], label='train')
+    pyplot.plot(history.history['val_loss'], label='test')
+    pyplot.legend()
+    pyplot.show()
