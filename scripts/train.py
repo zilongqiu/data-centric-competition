@@ -4,10 +4,10 @@ import numpy as np
 import json
 import sys
 
-directory = "YOUR_DIRECTORY_NAME_HERE"
+directory = "../data"
 user_data = directory + "/train"
 valid_data = directory + "/val"
-test_data = directory + "/test" # this can be the label book, or any other test set you create
+test_data = "../label_book" # this can be the label book, or any other test set you create
 
 ### DO NOT MODIFY BELOW THIS LINE, THIS IS THE FIXED MODEL ###
 batch_size = 8
@@ -16,7 +16,7 @@ tf.random.set_seed(123)
 
 if __name__ == "__main__":
     train = tf.keras.preprocessing.image_dataset_from_directory(
-        user_data + '/train',
+        user_data,
         labels="inferred",
         label_mode="categorical",
         class_names=["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"],
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     )
 
     valid = tf.keras.preprocessing.image_dataset_from_directory(
-        user_data + '/val',
+        valid_data,
         labels="inferred",
         label_mode="categorical",
         class_names=["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"],
