@@ -88,7 +88,7 @@ if __name__ == "__main__":
         save_weights_only=True,
     )
 
-    es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=10)
+    es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=5)
 
     history = model.fit(
         train,
@@ -108,4 +108,5 @@ if __name__ == "__main__":
     pyplot.plot(history.history['loss'], label='train')
     pyplot.plot(history.history['val_loss'], label='test')
     pyplot.legend()
+    pyplot.savefig('plot.png')
     pyplot.show()
