@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  image-generator:
+    build:
+      context: .
+    restart: always
+    container_name: image-generator
+    volumes:
+      - ./dicts:/app/trdg/dicts/
+      - ./fonts:/app/trdg/fonts/
+      - ./output:/app/trdg/output/out/
