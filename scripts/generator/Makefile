@@ -27,12 +27,21 @@ logs:
 enter:
 	docker compose run image-generator
 
-run:
-	docker compose exec image-generator trdg -c 10 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -k 90 -rk -al 1 -im L -ft /app/trdg/fonts/en/$(font)
+# Run for a specific font
+# CMD: make font=MY_FONT generate_w_font
+.PHONY: generate_w_font
+generate_w_font:
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -k 90 -rk -al 1 -im L -ft /app/trdg/fonts/en/$(font)
 
+# Generate massive combinaison of all fonts
+# CMD: make run
+generate_all:
+	docker compose exec image-generator trdg -c 11700 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -k 90 -rk -al 1 -im L -fd /app/trdg/fonts/en/
+
+# Generate image for each font in specific folder
+# CMD: make generate_grouped
 FONTS_DIR = ./fonts/en
-DOCKER_OUTPUT_DIR = /app/trdg/output/out
-l: $(FONTS_DIR)/*
+generate_grouped: $(FONTS_DIR)/*
 	for file in $^; do\
 		font=`basename $${file}`;\
 		echo "[STARTING] $${font}";\
@@ -41,10 +50,11 @@ l: $(FONTS_DIR)/*
 		mkdir -p "./output/$${filename}"\
 		echo "    Created";\
 		echo "    Starting image generation";\
-		docker compose exec image-generator trdg -c 10 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/$${filename} -e png -k 90 -rk -al 1 -im L -ft /app/trdg/fonts/en/$${font};\
+		docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/$${filename} -e png -k 90 -rk -al 1 -im L -ft /app/trdg/fonts/en/$${font};\
 		echo "    End image generation";\
 		echo "[END] $${font}";\
 	done
 
-del:
-	rm -rf ./output/*.jpg
+# Delete all the generated images
+generate_delete:
+	rm -rf ./output/*.png
