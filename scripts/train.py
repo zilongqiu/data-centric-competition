@@ -1,15 +1,12 @@
 import tensorflow as tf
-from tensorflow import keras
 from keras.callbacks import EarlyStopping
 from matplotlib import pyplot
-import numpy as np
-import json
 import sys
 
-directory = "../testing" # "../data"
+directory = "../testing"  # "../data"
 user_data = directory + "/train"
 valid_data = directory + "/val"
-test_data = "../label_book" # this can be the label book, or any other test set you create
+test_data = "../label_book"  # this can be the label book, or any other test set you create
 
 ### DO NOT MODIFY BELOW THIS LINE, THIS IS THE FIXED MODEL ###
 batch_size = 8

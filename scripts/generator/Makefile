@@ -23,21 +23,27 @@ down:
 enter:
 	docker compose run image-generator
 
-# Run for a specific font
+# Generate images with a specific font
 # CMD: make font=MY_FONT generate_w_font
 .PHONY: generate_w_font
 generate_w_font:
+	$(MAKE) generate_delete
 	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -k 90 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
 
 # Generate massive combinaison of all fonts
-# CMD: make run
+# CMD: make generate_all
+.PHONY: generate_all
 generate_all:
+	$(MAKE) generate_delete
 	docker compose exec image-generator trdg -c 9000 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -k 90 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	$(MAKE) generate_to_testing
 
 # Generate image for each font in specific folder
 # CMD: make generate_grouped
 FONTS_DIR = ./fonts/en
+.PHONY: generate_grouped
 generate_grouped: $(FONTS_DIR)/*
+	rm -rf ./output/*
 	for file in $^; do\
 		font=`basename $${file}`;\
 		echo "[STARTING] $${font}";\
@@ -52,6 +58,7 @@ generate_grouped: $(FONTS_DIR)/*
 	done
 
 # Delete all the generated images
+.PHONY: generate_delete
 generate_delete:
 	rm -rf ./output/I_*.png
 	rm -rf ./output/II_*.png
@@ -63,9 +70,11 @@ generate_delete:
 	rm -rf ./output/VIII_*.png
 	rm -rf ./output/IX_*.png
 	rm -rf ./output/X_*.png
+	rm -rf ./output/*
 
-# Copy all the generated images to training folder
-generate_to_training:
+# Copy all the generated images to testing folder
+.PHONY: generate_to_testing
+generate_to_testing:
 	rm -rf ./../../testing/train/i/*.png
 	rm -rf ./../../testing/train/ii/*.png
 	rm -rf ./../../testing/train/iii/*.png
