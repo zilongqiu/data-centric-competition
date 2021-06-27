@@ -19,10 +19,6 @@ rebuild:
 down:
 	docker compose down
 
-.PHONY: logs
-logs:
-	docker compose logs -f
-
 .PHONY: enter
 enter:
 	docker compose run image-generator
