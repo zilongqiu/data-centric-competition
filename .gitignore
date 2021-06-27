@@ -1,1 +1,3 @@
 output/
+testing/train/*/*.png
+testing/val/*/*.png
