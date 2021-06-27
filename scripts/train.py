@@ -88,7 +88,7 @@ if __name__ == "__main__":
         save_weights_only=True,
     )
 
-    es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=5)
+    es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=20)
 
     history = model.fit(
         train,
