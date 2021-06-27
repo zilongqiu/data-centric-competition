@@ -1,0 +1,9 @@
+Default data manually cleaned
+
+train
+loss: 0.7957 - accuracy: 0.7141
+final loss 0.795691192150116, final acc 0.7141008973121643
+
+test
+loss: 1.3506 - accuracy: 0.6154
+test loss 1.3506419658660889, test acc 0.6153846383094788
