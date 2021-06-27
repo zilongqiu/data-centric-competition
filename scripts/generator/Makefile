@@ -85,6 +85,16 @@ generate_to_testing:
 	rm -rf ./../../testing/train/viii/*.png
 	rm -rf ./../../testing/train/ix/*.png
 	rm -rf ./../../testing/train/x/*.png
+	rm -rf ./../../testing/val/i/*.png
+	rm -rf ./../../testing/val/ii/*.png
+	rm -rf ./../../testing/val/iii/*.png
+	rm -rf ./../../testing/val/iv/*.png
+	rm -rf ./../../testing/val/v/*.png
+	rm -rf ./../../testing/val/vi/*.png
+	rm -rf ./../../testing/val/vii/*.png
+	rm -rf ./../../testing/val/viii/*.png
+	rm -rf ./../../testing/val/ix/*.png
+	rm -rf ./../../testing/val/x/*.png
 	cp ./output/I_*.png ./../../testing/train/i/
 	cp ./output/II_*.png ./../../testing/train/ii/
 	cp ./output/III_*.png ./../../testing/train/iii/
