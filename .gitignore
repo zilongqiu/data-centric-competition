@@ -1,3 +1,6 @@
 output/
 testing/train/*/*.png
 testing/val/*/*.png
+scripts/best_model.*
+scripts/checkpoint
+scripts/plot.png
