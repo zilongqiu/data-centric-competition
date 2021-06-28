@@ -1,3 +1,5 @@
+Epoch 86/100
+
 train
 loss: 0.1603 - accuracy: 0.9630
 final loss 0.16025720536708832, final acc 0.9629825353622437

@@ -95,6 +95,7 @@ if __name__ == "__main__":
     )
 
     model.load_weights("best_model")
+    model.save('model.h5')
 
     loss, acc = model.evaluate(valid)
     print(f"final loss {loss}, final acc {acc}")
