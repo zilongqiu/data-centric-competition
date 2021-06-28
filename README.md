@@ -48,3 +48,13 @@ sample_submission/
     - Delete all the generated images `make generate_delete`
     - Copy all the generated images to testing folder `make generate_to_testing`
 6. *(optional)* If using `make generate_all`, you need to split the `testing/train` images to the `testing/val` folder (`train` 80% / `val` 20%)
+
+## Predict image label
+
+1. `cd scripts`
+2. `python3 predict.py ./../label_book/ii/a37502ee-ce5d-11eb-b317-38f9d35ea60f.png`
+
+## Test model against the testing label_book
+
+1. `cd scripts`
+2. `python3 predict_label_book.py ../results/baseline/model/model.h5`
