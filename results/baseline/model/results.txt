@@ -1,4 +1,4 @@
-Base images
+Base images from competition
 
 train
 loss: 1.4624 - accuracy: 0.6667

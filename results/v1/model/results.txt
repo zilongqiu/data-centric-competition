@@ -1,3 +1,4 @@
+Generate images from large number of different fonts
 Epoch 86/100
 
 train
