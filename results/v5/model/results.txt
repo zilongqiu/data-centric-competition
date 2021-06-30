@@ -1,0 +1,28 @@
+Default data manually cleaned++ + data augmentation from v2
+
+Data augmentation params:
+- rotation_range=40
+- width_shift_range=0.2
+- height_shift_range=0.2
+- shear_range=0.2
+- zoom_range=0.2
+- horizontal_flip=True
+- fill_mode='nearest'
+
+Number of image per augmentation: 5
+
+train
+loss: 1.4164 - accuracy: 0.6455
+final acc 0.6455368399620056
+
+Test
+loss: 2.4408 - accuracy: 0.5962
+test loss 2.4408347606658936, test acc 0.5961538553237915
+
+label_book
+==============================
+TOTAL: 52
+CORRECT: 31
+WRONG: 21
+RESULT: 59.61538461538461%
+==============================

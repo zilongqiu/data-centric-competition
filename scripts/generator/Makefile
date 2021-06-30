@@ -35,7 +35,7 @@ generate_w_font:
 .PHONY: generate_all
 generate_all:
 	$(MAKE) generate_delete
-	docker compose exec image-generator trdg -c 9000 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -k 90 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 1000 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -hw -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
 	$(MAKE) generate_to_training
 
 # Generate image for each font in specific folder
