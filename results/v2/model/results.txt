@@ -1,0 +1,17 @@
+Default data manually cleaned++ and aligned the quantity of images for each roman number
+
+train
+loss: 1.4465 - accuracy: 0.5850
+final loss 1.4464671611785889, final acc 0.5849999785423279
+
+test
+loss: 1.6470 - accuracy: 0.4423
+test loss 1.647032380104065, test acc 0.4423076808452606
+
+label_book
+==============================
+TOTAL: 52
+CORRECT: 23
+WRONG: 29
+RESULT: 44.230769230769226%
+==============================
