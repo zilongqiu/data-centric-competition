@@ -85,13 +85,13 @@ if __name__ == "__main__":
         save_weights_only=True,
     )
 
-    es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=20)
+    #es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=20)
 
     history = model.fit(
         train,
         validation_data=valid,
         epochs=100,
-        callbacks=[checkpoint, es],
+        callbacks=[checkpoint],
     )
 
     model.load_weights("best_model")

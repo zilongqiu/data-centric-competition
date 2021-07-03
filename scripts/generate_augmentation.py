@@ -8,7 +8,7 @@ from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_a
 total = 0
 lastFolder = ''
 
-for subdir, dirs, files in os.walk('./../results/v2/train'):
+for subdir, dirs, files in os.walk('./../results/v8/train'):
     for file in files:
         filepath = subdir + os.sep + file
 
@@ -27,7 +27,7 @@ for subdir, dirs, files in os.walk('./../results/v2/train'):
                     height_shift_range=0.2,
                     shear_range=0.2,
                     zoom_range=0.2,
-                    horizontal_flip=True,
+                    #horizontal_flip=True,
                     fill_mode='nearest')
 
             img = load_img(filepath)  # this is a PIL image

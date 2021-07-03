@@ -35,7 +35,7 @@ generate_w_font:
 .PHONY: generate_all
 generate_all:
 	$(MAKE) generate_delete
-	docker compose exec image-generator trdg -c 1000 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -hw -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 1000 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
 	$(MAKE) generate_to_training
 
 # Generate image for each font in specific folder
@@ -75,26 +75,26 @@ generate_delete:
 # Copy all the generated images to training folder
 .PHONY: generate_to_training
 generate_to_training:
-	rm -rf ./../../data/train/i/*.png
-	rm -rf ./../../data/train/ii/*.png
-	rm -rf ./../../data/train/iii/*.png
-	rm -rf ./../../data/train/iv/*.png
-	rm -rf ./../../data/train/v/*.png
-	rm -rf ./../../data/train/vi/*.png
-	rm -rf ./../../data/train/vii/*.png
-	rm -rf ./../../data/train/viii/*.png
-	rm -rf ./../../data/train/ix/*.png
-	rm -rf ./../../data/train/x/*.png
-	rm -rf ./../../data/val/i/*.png
-	rm -rf ./../../data/val/ii/*.png
-	rm -rf ./../../data/val/iii/*.png
-	rm -rf ./../../data/val/iv/*.png
-	rm -rf ./../../data/val/v/*.png
-	rm -rf ./../../data/val/vi/*.png
-	rm -rf ./../../data/val/vii/*.png
-	rm -rf ./../../data/val/viii/*.png
-	rm -rf ./../../data/val/ix/*.png
-	rm -rf ./../../data/val/x/*.png
+	# rm -rf ./../../data/train/i/*.png
+	# rm -rf ./../../data/train/ii/*.png
+	# rm -rf ./../../data/train/iii/*.png
+	# rm -rf ./../../data/train/iv/*.png
+	# rm -rf ./../../data/train/v/*.png
+	# rm -rf ./../../data/train/vi/*.png
+	# rm -rf ./../../data/train/vii/*.png
+	# rm -rf ./../../data/train/viii/*.png
+	# rm -rf ./../../data/train/ix/*.png
+	# rm -rf ./../../data/train/x/*.png
+	# rm -rf ./../../data/val/i/*.png
+	# rm -rf ./../../data/val/ii/*.png
+	# rm -rf ./../../data/val/iii/*.png
+	# rm -rf ./../../data/val/iv/*.png
+	# rm -rf ./../../data/val/v/*.png
+	# rm -rf ./../../data/val/vi/*.png
+	# rm -rf ./../../data/val/vii/*.png
+	# rm -rf ./../../data/val/viii/*.png
+	# rm -rf ./../../data/val/ix/*.png
+	# rm -rf ./../../data/val/x/*.png
 	cp ./output/I_*.png ./../../data/train/i/
 	cp ./output/II_*.png ./../../data/train/ii/
 	cp ./output/III_*.png ./../../data/train/iii/

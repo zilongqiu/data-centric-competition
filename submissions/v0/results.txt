@@ -1,0 +1,18 @@
+Default data manually cleaned (results from v0)
+
+train
+loss: 0.9035 - accuracy: 0.7555
+final loss 0.9034550786018372, final acc 0.7554980516433716
+
+
+test
+loss: 1.7664 - accuracy: 0.6923
+test loss 1.7664299011230469, test acc 0.692307710647583
+
+label_book
+==============================
+TOTAL: 52
+CORRECT: 37
+WRONG: 15
+RESULT: 71.15384615384616%
+==============================
