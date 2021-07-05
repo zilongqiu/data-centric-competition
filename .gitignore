@@ -5,3 +5,7 @@ scripts/best_model.*
 scripts/checkpoint
 scripts/plot.png
 scripts/model.h5
+data/model/best_model.*
+data/model/checkpoint
+data/model/plot.png
+data/model/model.h5

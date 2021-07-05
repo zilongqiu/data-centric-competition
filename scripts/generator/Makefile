@@ -28,14 +28,32 @@ enter:
 .PHONY: generate_w_font
 generate_w_font:
 	$(MAKE) generate_delete
-	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -k 90 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/I.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/II.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/III.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/IV.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/V.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/VI.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/VII.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/VIII.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/IX.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/X.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -ft /app/trdg/fonts/en/$(font)
 
 # Generate massive combinaison of all fonts
 # CMD: make generate_all
 .PHONY: generate_all
 generate_all:
 	$(MAKE) generate_delete
-	docker compose exec image-generator trdg -c 1000 -t 2 -dt /app/trdg/dicts/en.txt --output_dir /app/trdg/output/out/ -e png -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/I.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/II.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/III.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/IV.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/V.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/VI.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/VII.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/VIII.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/IX.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
+	docker compose exec image-generator trdg -c 10 -t 2 -dt /app/trdg/dicts/X.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
 	$(MAKE) generate_to_training
 
 # Generate image for each font in specific folder
@@ -75,26 +93,6 @@ generate_delete:
 # Copy all the generated images to training folder
 .PHONY: generate_to_training
 generate_to_training:
-	# rm -rf ./../../data/train/i/*.png
-	# rm -rf ./../../data/train/ii/*.png
-	# rm -rf ./../../data/train/iii/*.png
-	# rm -rf ./../../data/train/iv/*.png
-	# rm -rf ./../../data/train/v/*.png
-	# rm -rf ./../../data/train/vi/*.png
-	# rm -rf ./../../data/train/vii/*.png
-	# rm -rf ./../../data/train/viii/*.png
-	# rm -rf ./../../data/train/ix/*.png
-	# rm -rf ./../../data/train/x/*.png
-	# rm -rf ./../../data/val/i/*.png
-	# rm -rf ./../../data/val/ii/*.png
-	# rm -rf ./../../data/val/iii/*.png
-	# rm -rf ./../../data/val/iv/*.png
-	# rm -rf ./../../data/val/v/*.png
-	# rm -rf ./../../data/val/vi/*.png
-	# rm -rf ./../../data/val/vii/*.png
-	# rm -rf ./../../data/val/viii/*.png
-	# rm -rf ./../../data/val/ix/*.png
-	# rm -rf ./../../data/val/x/*.png
 	cp ./output/I_*.png ./../../data/train/i/
 	cp ./output/II_*.png ./../../data/train/ii/
 	cp ./output/III_*.png ./../../data/train/iii/
@@ -105,3 +103,31 @@ generate_to_training:
 	cp ./output/VIII_*.png ./../../data/train/viii/
 	cp ./output/IX_*.png ./../../data/train/ix/
 	cp ./output/X_*.png ./../../data/train/x/
+
+# Copy all the converted images to training folder
+.PHONY: convert_to_training
+convert_to_training:
+	cp ./_processedoutput/I_*.png ./../../data/train/i/
+	cp ./_processedoutput/II_*.png ./../../data/train/ii/
+	cp ./_processedoutput/III_*.png ./../../data/train/iii/
+	cp ./_processedoutput/IV_*.png ./../../data/train/iv/
+	cp ./_processedoutput/V_*.png ./../../data/train/v/
+	cp ./_processedoutput/VI_*.png ./../../data/train/vi/
+	cp ./_processedoutput/VII_*.png ./../../data/train/vii/
+	cp ./_processedoutput/VIII_*.png ./../../data/train/viii/
+	cp ./_processedoutput/IX_*.png ./../../data/train/ix/
+	cp ./_processedoutput/X_*.png ./../../data/train/x/
+
+# Copy all the converted images to val folder
+.PHONY: convert_to_val
+convert_to_val:
+	cp ./_processedoutput/I_*.png ./../../data/val/i/
+	cp ./_processedoutput/II_*.png ./../../data/val/ii/
+	cp ./_processedoutput/III_*.png ./../../data/val/iii/
+	cp ./_processedoutput/IV_*.png ./../../data/val/iv/
+	cp ./_processedoutput/V_*.png ./../../data/val/v/
+	cp ./_processedoutput/VI_*.png ./../../data/val/vi/
+	cp ./_processedoutput/VII_*.png ./../../data/val/vii/
+	cp ./_processedoutput/VIII_*.png ./../../data/val/viii/
+	cp ./_processedoutput/IX_*.png ./../../data/val/ix/
+	cp ./_processedoutput/X_*.png ./../../data/val/x/

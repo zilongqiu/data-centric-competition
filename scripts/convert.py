@@ -17,7 +17,7 @@ def convert_images(input_folder, output_folder):
 
 
 if __name__ == "__main__":
-    folder_name = "./generator/output/train/"
+    folder_name = "./generator/"
     folders = glob(f"{folder_name}/*")
     for f in folders:
         convert_images(f, f.replace(f"{folder_name}", f"{folder_name}_processed"))

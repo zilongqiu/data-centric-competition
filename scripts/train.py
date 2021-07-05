@@ -78,7 +78,7 @@ if __name__ == "__main__":
     print(f"loss {loss_0}, acc {acc_0}")
 
     checkpoint = tf.keras.callbacks.ModelCheckpoint(
-        "best_model",
+        "../data/model/best_model",
         monitor="val_accuracy",
         mode="max",
         save_best_only=True,
@@ -94,8 +94,8 @@ if __name__ == "__main__":
         callbacks=[checkpoint],
     )
 
-    model.load_weights("best_model")
-    model.save('model.h5')
+    model.load_weights("../data/model/best_model")
+    model.save('../data/model/model.h5')
 
     loss, acc = model.evaluate(valid)
     print(f"final loss {loss}, final acc {acc}")
@@ -103,8 +103,16 @@ if __name__ == "__main__":
     test_loss, test_acc = model.evaluate(test)
     print(f"test loss {test_loss}, test acc {test_acc}")
 
+    original_stdout = sys.stdout
+
+    with open('../data/model/results.txt', 'w') as f:
+        sys.stdout = f
+        print(test_acc, file=f)
+        sys.stdout = original_stdout
+    f.close()
+
     pyplot.plot(history.history['loss'], label='train')
     pyplot.plot(history.history['val_loss'], label='test')
     pyplot.legend()
-    pyplot.savefig('plot.png')
-    pyplot.show()
+    pyplot.savefig('../data/model/plot.png')
+    #pyplot.show()
