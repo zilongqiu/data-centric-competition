@@ -5,6 +5,9 @@ scripts/best_model.*
 scripts/checkpoint
 scripts/plot.png
 scripts/model.h5
+scripts/generator/data_augmentation/input/*.png
+scripts/generator/data_augmentation/output/*.png
+scripts/generator/data_augmentation/temp/*/*.png
 data/model/best_model.*
 data/model/checkpoint
 data/model/plot.png

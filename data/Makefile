@@ -43,3 +43,16 @@ copy_version:
 	$(MAKE) delete_all
 	cp -r ../results/$(VERSION)/train/* ./train/
 	cp -r ../results/$(VERSION)/val/* ./val/
+
+.PHONY: remove_number_prefix
+remove_number_prefix:
+	mmv ./train/i/I_\*.png ./train/i/\#1.png
+	mmv ./train/ii/II_\*.png ./train/ii/\#1.png
+	mmv ./train/iii/III_\*.png ./train/iii/\#1.png
+	mmv ./train/iv/IV_\*.png ./train/iv/\#1.png
+	mmv ./train/v/V_\*.png ./train/v/\#1.png
+	mmv ./train/vi/VI_\*.png ./train/vi/\#1.png
+	mmv ./train/vii/VII_\*.png ./train/vii/\#1.png
+	mmv ./train/viii/VIII_\*.png ./train/viii/\#1.png
+	mmv ./train/ix/IX_\*.png ./train/ix/\#1.png
+	mmv ./train/x/X_\*.png ./train/x/\#1.png
