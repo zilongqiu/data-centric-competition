@@ -28,7 +28,7 @@ def main():
     print(f'proc {image_path}')
     img = imageio.imread(image_path)
     splited_name = os.path.splitext(os.path.basename(image_path))
-    for i in range(1):
+    for i in range(3):
       output_path = f'{DIR}/output/{splited_name[0]}_{i}_{splited_name[1]}'
       imageio.imwrite(output_path, seq.augment_image(img))
 
