@@ -104,7 +104,7 @@ V
       CORRECT
     - ./../label_book/v/a8e3ef7e-ce5d-11eb-b317-38f9d35ea60f.png
       CORRECT
-    - ./../label_book/v/a8d56ac6-ce5d-11eb-b317-38f9d35ea60f.png
+    - ./../label_book/v/a8d56ac6-ce5d-11eb-b317-38f9d35ea60f.png ----> normal looks like I
       WRONG I
     - ./../label_book/v/a8a5dcc0-ce5d-11eb-b317-38f9d35ea60f.png
       CORRECT
