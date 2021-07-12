@@ -34,10 +34,6 @@ auto_train:
 auto_train_cumulative:
 	rm -rf ../data/model/*
 	touch ../data/model/results.txt
-	#rm -rf ../data/train/*
-	#rm -rf ../data/val/*
-	#cp -r ../best/train/* ../data/train/
-	#cp -r ../best/val/* ../data/val/
 	cd generator && $(MAKE) generate_all
 	python3 train.py
 	sleep 5
@@ -54,8 +50,9 @@ auto_train_cumulative:
 	@mmv ../data/train/\*/X_\* ../data/train/\#1/generated_$$(openssl rand -hex 12)_\#2
 	echo "[END] Renaming generated training data"
 	sleep 5
+	$(MAKE) predict_scores
+	sleep 2
 	sh ../best/best.sh
-	python3 predict_label_book.py ../data/model/model.h5
 	sleep 15
 	$(MAKE) auto_train_cumulative
 
@@ -86,7 +83,13 @@ auto_train_imgaug:
 	@mmv ../data/train/\*/X_\* ../data/train/\#1/generated_$$(openssl rand -hex 12)_\#2
 	echo "[END] Renaming generated training data"
 	sleep 5
+	$(MAKE) predict_scores
+	sleep 2
 	sh ../best/best.sh
-	python3 predict_label_book.py ../data/model/model.h5
 	sleep 15
 	$(MAKE) auto_train_imgaug
+
+.PHONY: predict_scores
+predict_scores:
+	python3 predict_scores.py ./../data/model/model.h5 ./../label_book/ > ./../data/model/predict_label_book.txt
+	python3 predict_scores.py ./../data/model/model.h5 ./../data/val/ > ./../data/model/predict_val.txt

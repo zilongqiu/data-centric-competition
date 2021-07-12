@@ -20,7 +20,8 @@ correct = 0
 wrong = 0
 lastFolder = ''
 
-for subdir, dirs, files in os.walk('./../label_book/'):
+validationPath = sys.argv[2]
+for subdir, dirs, files in os.walk(validationPath):
     for file in files:
         filepath = subdir + os.sep + file
 
