@@ -41,8 +41,8 @@ def compare_images(imageA, imageB, display, title):
 
 # load the images -- the original, the original + contrast,
 # and the original + photoshop
-originalImagePath = "./../label_book/II/a3e33dcc-ce5d-11eb-b317-38f9d35ea60f.png"
-classBlocked = "II"
+originalImagePath = "./../label_book/IX/a7967416-ce5d-11eb-b317-38f9d35ea60f.png"
+#wronglyClass = "X"
 original = cv2.imread(originalImagePath)
 original = cv2.cvtColor(original, cv2.COLOR_BGR2GRAY)
 #contrast = cv2.imread("./../label_book/vii/a5ade382-ce5d-11eb-b317-38f9d35ea60f.png")
@@ -67,7 +67,7 @@ def similarity_for_folder(original, targetFolderPath):
                     similarityScore = data['ssim']
                     mseScore = data['mse']
 
-                if data['ssim'] > 0.82:
+                if data['ssim'] > 0.80:
                     highScores.append({'score': data['ssim'], 'mse': data['mse'], 'path': filepath})
 
         return {'similarityScore': similarityScore,
@@ -148,24 +148,24 @@ for number in class_names:
             print("MSE: %.2f" % (mseScore))
             print("Original: %s" % (originalImagePath))
             print("Most similar image: %s" % (similarityImagePath))
-        #averageScores = averageHighScores(similarityHighScores)
-        #averageSSIM = averageScores['averageSSIM']
-        #averageMSE = averageScores['averageMSE']
+        averageScores = averageHighScores(similarityHighScores)
+        averageSSIM = averageScores['averageSSIM']
+        averageMSE = averageScores['averageMSE']
 
-        if number != classBlocked:
-            for similar in similarityHighScores:
-                os.remove(similar['path'])
+        #if number == wronglyClass:
+        #    for similar in similarityHighScores:
+        #        os.remove(similar['path'])
 
-        #if (averageMSE < bestMSEScore):
-        #    bestMSEScore = averageMSE
-        #    bestClassName = number
-
-        bestScores = highestScores(similarityHighScores)
-        bestMSE = bestScores['bestMSE']
-
-        if (bestScores['bestSSIM'] < bestMSEScore):
-            bestMSEScore = bestScores['bestSSIM']
+        if (averageMSE < bestMSEScore):
+            bestMSEScore = averageMSE
             bestClassName = number
+
+        #bestScores = highestScores(similarityHighScores)
+        #bestMSE = bestScores['bestMSE']
+
+        #if (bestScores['bestSSIM'] < bestMSEScore):
+        #    bestMSEScore = bestScores['bestSSIM']
+        #    bestClassName = number
 
 print("\n\nBest matching class: %s" % (bestClassName))
 print("Best class MSE: %.2f" % (bestMSEScore))
