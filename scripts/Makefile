@@ -94,4 +94,4 @@ auto_train_imgaug:
 predict_scores:
 	python3 predict_scores.py ./../data/model/model.h5 ./../label_book/ > ./../data/model/predict_label_book.txt
 	python3 predict_scores.py ./../data/model/model.h5 ./../data/val/ > ./../data/model/predict_val.txt
-	python3 display_predictions.py ./../data/model/model.h5 && mv ./predictions.html ./../data/model/predictions.html
+	python3 display_predictions.py ./../data/model/model.h5 && cp ./wrong_predictions.html ./../data/model/wrong_predictions.html
