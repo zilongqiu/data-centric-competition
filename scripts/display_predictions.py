@@ -60,14 +60,14 @@ with open('./wrong_predictions.html', 'w') as f:
                     if prediction == folderName:
                         print('<div class="col-lg-4 corrects" style="height:200px; text-align:center;">', file=f)
                         print('<i class="bi-hand-thumbs-up-fill" style="font-size: 4rem; color: green; position:absolute; left: 60px"></i>', file=f)
-                        print('<img src="'+filepath+'" alt="'+filepath+'" style="max-width: 150px">', file=f)
+                        print('<img src="'+filepath+'" class="image" alt="'+filepath+'" style="max-width: 150px" onclick="navigator.clipboard.writeText(\''+filepath+'\');">', file=f)
                         print('</div>', file=f)
                         correct += 1
                     else:
                         print('<div class="col-lg-4 wrongs" style="height:200px; text-align:center;">', file=f)
                         print('<i class="bi-hand-thumbs-down-fill" style="font-size: 4rem; color: red; position:absolute; left: 60px"></i>', file=f)
                         print('<p style="position:absolute; left: 100px; font-weight:bold; font-size: 2em;">' + prediction +'</p>', file=f)
-                        print('<img src="'+filepath+'" alt="404" style="max-width: 150px">', file=f)
+                        print('<img src="'+filepath+'" class="image" alt="404" style="max-width: 150px" onclick="navigator.clipboard.writeText(\''+filepath+'\');">', file=f)
                         print('</div>', file=f)
                         wrong += 1
             print('</div>', file=f)
