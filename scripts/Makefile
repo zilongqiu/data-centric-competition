@@ -1,4 +1,23 @@
 
+# Train
+.PHONY: train
+train:
+	rm -rf ../data/model/*
+	touch ../data/model/results.txt
+	python3 train.py
+	sleep 5
+	$(MAKE) predict_scores
+
+# Copy data from best
+.PHONY: copy_best
+copy_best:
+	rm -rf ../data/model/*
+	touch ../data/model/results.txt
+	rm -rf ../data/train/*
+	rm -rf ../data/val/*
+	cp -r ../best/train/* ../data/train/
+	cp -r ../best/val/* ../data/val/
+
 # Auto train
 .PHONY: auto_train
 auto_train:
