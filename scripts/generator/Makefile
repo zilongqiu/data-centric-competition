@@ -44,17 +44,17 @@ generate_w_font:
 .PHONY: generate_all
 generate_all:
 	$(MAKE) generate_delete
-	docker compose exec image-generator trdg -c 50 -t 2 -dt /app/trdg/dicts/I.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
-	docker compose exec image-generator trdg -c 50 -t 2 -dt /app/trdg/dicts/II.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
-	docker compose exec image-generator trdg -c 50 -t 2 -dt /app/trdg/dicts/III.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
-	docker compose exec image-generator trdg -c 50 -t 2 -dt /app/trdg/dicts/IV.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
-	docker compose exec image-generator trdg -c 50 -t 2 -dt /app/trdg/dicts/V.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
-	docker compose exec image-generator trdg -c 50 -t 2 -dt /app/trdg/dicts/VI.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
-	docker compose exec image-generator trdg -c 50 -t 2 -dt /app/trdg/dicts/VII.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
-	docker compose exec image-generator trdg -c 50 -t 2 -dt /app/trdg/dicts/VIII.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
-	docker compose exec image-generator trdg -c 50 -t 2 -dt /app/trdg/dicts/IX.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
-	docker compose exec image-generator trdg -c 50 -t 2 -dt /app/trdg/dicts/X.txt --output_dir /app/trdg/output/out/ -e png -d 3 -do 2 -k 40 -rk -al 1 -im L -wd 32 -b 1 -fd /app/trdg/fonts/en/
-	$(MAKE) generate_to_training
+	docker compose exec image-generator trdg -c 5 -t 2 -dt /app/trdg/dicts/I.txt --output_dir /app/trdg/output/out/ -e png -k 20 -rk -al 1 -f 240 -im L -wd 240 -b 1 -fd /app/trdg/fonts/en/ --fit --margins 75,75,75,75
+	docker compose exec image-generator trdg -c 5 -t 2 -dt /app/trdg/dicts/II.txt --output_dir /app/trdg/output/out/ -e png -k 20 -rk -al 1 -f 240 -im L -wd 240 -b 1 -fd /app/trdg/fonts/en/ --fit --margins 75,75,75,75
+	docker compose exec image-generator trdg -c 5 -t 2 -dt /app/trdg/dicts/III.txt --output_dir /app/trdg/output/out/ -e png -k 20 -rk -al 1 -f 240 -im L -wd 240 -b 1 -fd /app/trdg/fonts/en/ --fit --margins 75,75,75,75
+	docker compose exec image-generator trdg -c 5 -t 2 -dt /app/trdg/dicts/IV.txt --output_dir /app/trdg/output/out/ -e png -k 20 -rk -al 1 -f 240 -im L -wd 240 -b 1 -fd /app/trdg/fonts/en/ --fit --margins 75,75,75,75
+	docker compose exec image-generator trdg -c 5 -t 2 -dt /app/trdg/dicts/V.txt --output_dir /app/trdg/output/out/ -e png -k 20 -rk -al 1 -f 240 -im L -wd 240 -b 1 -fd /app/trdg/fonts/en/ --fit --margins 75,75,75,75
+	docker compose exec image-generator trdg -c 5 -t 2 -dt /app/trdg/dicts/VI.txt --output_dir /app/trdg/output/out/ -e png -k 20 -rk -al 1 -f 240 -im L -wd 240 -b 1 -fd /app/trdg/fonts/en/ --fit --margins 75,75,75,75
+	docker compose exec image-generator trdg -c 5 -t 2 -dt /app/trdg/dicts/VII.txt --output_dir /app/trdg/output/out/ -e png -k 20 -rk -al 1 -f 240 -im L -wd 240 -b 1 -fd /app/trdg/fonts/en/ --fit --margins 75,75,75,75
+	docker compose exec image-generator trdg -c 5 -t 2 -dt /app/trdg/dicts/VIII.txt --output_dir /app/trdg/output/out/ -e png -k 20 -rk -al 1 -f 240 -im L -wd 240 -b 1 -fd /app/trdg/fonts/en/ --fit --margins 75,75,75,75
+	docker compose exec image-generator trdg -c 5 -t 2 -dt /app/trdg/dicts/IX.txt --output_dir /app/trdg/output/out/ -e png -k 20 -rk -al 1 -f 240 -im L -wd 240 -b 1 -fd /app/trdg/fonts/en/ --fit --margins 75,75,75,75
+	docker compose exec image-generator trdg -c 5 -t 2 -dt /app/trdg/dicts/X.txt --output_dir /app/trdg/output/out/ -e png -k 20 -rk -al 1 -f 240 -im L -wd 240 -b 1 -fd /app/trdg/fonts/en/ --fit --margins 75,75,75,75
+	#$(MAKE) generate_to_training
 
 # Generate image for each font in specific folder
 # CMD: make generate_grouped
