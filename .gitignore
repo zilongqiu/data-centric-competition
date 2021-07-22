@@ -9,7 +9,4 @@ scripts/wrong_predictions.html
 scripts/generator/data_augmentation/input/*.png
 scripts/generator/data_augmentation/output/*.png
 scripts/generator/data_augmentation/temp/*/*.png
-data/model/best_model.*
-data/model/checkpoint
-data/model/plot.png
-data/model/model.h5
+data/model/*
